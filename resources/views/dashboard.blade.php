@@ -1,6 +1,6 @@
 @extends('layouts.appFront')
 @section('content')
-@include('partials.navbar')
+@include('partials.nav')
  <section>
     <div class="container-fluid" data-aos="fade-up">
         <div class="row justify-content-center">

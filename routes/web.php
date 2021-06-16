@@ -5,7 +5,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitreController;
 use App\Models\About;
@@ -14,7 +13,6 @@ use App\Models\Hero;
 use App\Models\Information;
 use App\Models\Portfolio;
 use App\Models\Service;
-use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\Titre;
 use Illuminate\Support\Facades\Route;
@@ -38,10 +36,9 @@ Route::get('/', function () {
     $portfolios = Portfolio::all();
     $services = Service::all();
     $contacts = Contact::all();
-    $teams = Team::all();
     $testimonials = Testimonial::all();
 
-return view('home',compact("titres","about","informations","heroes","services","contacts","teams","testimonials"));
+return view('home',compact("titres","about","informations","heroes","services","contacts","testimonials"));
 
 });
 
@@ -65,6 +62,8 @@ Route::resource("/titres", TitreController::class);
 
 Route::resource("/teams", TeamController::class);
 
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 
