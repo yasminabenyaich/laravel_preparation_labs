@@ -25,9 +25,10 @@
     <link  rel="stylesheet"  href={{  asset("css/app.css") }}>
 </head>
 <body>
-
+       
     <section class="hero">
         <div>
+
             @yield('content')
         </div>
     </section>

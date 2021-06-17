@@ -26,7 +26,6 @@
 </head>
 <body>
 
-    @include('partials.navBack')
 
     <section class="hero">
         <div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitreController;
@@ -40,7 +41,7 @@ Route::get('/', function () {
 
 return view('home',compact("titres","about","informations","heroes","services","contacts","testimonials"));
 
-});
+})->name('home');
 
 
 Route::resource("/heroes",HeroController::class);
@@ -51,6 +52,8 @@ Route::post("/abouts/{id}/download",[AboutController::class,"download"]);
 
 Route::resource("/informations",InformationController::class);
 
+Route::resource("/portfolios",PortfolioController::class);
+
 Route::resource("/services", ServiceController::class);
 
 Route::resource("/testimonials", TestimonialController::class);
@@ -60,7 +63,7 @@ Route::resource("/contacts", ContactController::class);
 
 Route::resource("/titres", TitreController::class);
 
-Route::resource("/teams", TeamController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
